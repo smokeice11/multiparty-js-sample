@@ -1,6 +1,6 @@
 ### Multi Party Examples
 
-Here you will find example source code for implementing multy party calls. At any time do not hesitate to refer to our [API Reference](http://docs.sightcall.com/GD/01_javascript/10_api_js_internal/) or to the multi party [How-To](http://docs.sightcall.com/GD/01_javascript/05_js_multiparty.html). If needed, definitions are available [here](http://docs.sightcall.com/GD/06_definitions.html)
+Here you will find example source code for implementing multy party calls. At any time do not hesitate to refer to our [API Reference](http://docs.sightcall.com/GD/01_javascript/10_api_js_sightcall/) or to the multi party [How-To](http://docs.sightcall.com/GD/01_javascript/05_js_multiparty.html). If needed, definitions are available [here](http://docs.sightcall.com/GD/06_definitions.html)
 
 
 #### Requirements
