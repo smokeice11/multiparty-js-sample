@@ -109,14 +109,15 @@
             init = function () {
                 getToken(UID_USER);
             },
-            create = function () {
-                var options = {
-                    location : "on the cloud ",
-                    startDate : Math.round(new Date().valueOf()/1000) + 100,
-                    stopDate  : Math.round(new Date().valueOf()/1000) + 200,
-                };
-                meetingPoint = rtcc.createMeetingPoint('scheduled', options);
-            },
+                /* ******************************************************************************** */
+                /*                                                                                  */
+                /*  join (Step 1):                                                                  */
+                /*  In the join function, the attendee joins the meeting point                      */
+                /*  whose id was set in the meeting_point_id field                                  */
+                /*  This function is called when the button "Join" is pushed                        */
+                /*                                                                                  */
+                /* ******************************************************************************** */
+
             join = function (){
                 var id = document.getElementById('meeting_point_id').value
                 rtcc.joinConfCall(id);

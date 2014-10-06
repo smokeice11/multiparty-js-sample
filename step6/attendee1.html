@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Rtcc Application: Attendee (Step Two)</title>
+    <title>My Rtcc Application: External Attendee (Step Six)</title>
     <script type="text/javascript" src="http://download.rtccloud.net/js/webappid/YOUR_APP_IDENTIFIER"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -24,7 +24,7 @@
             // Define the optional parameters
             options = {
                 debugLevel : 1,
-                displayName : 'Attendee1',
+                displayName : 'External User',
                 defaultStyle: true,
                 legacy: false,
             },
@@ -54,31 +54,19 @@
                         break;
                     case 'loggedasotheruser':
                         // force connection, kick other logged users
-                         getToken(UID_USER, function (token){
-                            rtcc.setToken(token);
                             rtcc.authenticate(1);
-                        });
                         break;
                     }
                 };
 
                 rtcc.onConfCallHandler = function(action, obj) {
-                    debugger;
-                    if (action === "meetingPointCreated") {
-                        obj.autoaccept_mode();
-                        document.getElementById("meeting_point_id_display").value = obj.id;
-                    }else if (action === "attendeePending"){
+                    if (action === "attendeePending"){
                         document.getElementById("join_status").style.display = "block";
                         document.getElementById("join_status").innerHTML = "<h4>Status:Waiting For Approval of the Host</h4>"
                     }else if (action === "attendeeAccepted"){
                             document.getElementById("join_status").innerHTML = "<h4>Status: The Host Accepted You</h4>"
                     }else if (action === "attendeeDenied"){
                             document.getElementById("join_status").innerHTML = "<h4>Status: The Host Denied You</h4>"
-                    }else if (action === 'attendeeInvited'){
-                        meetingPointAttendee = obj
-
-                        document.getElementById("invite_status").innerHTML = "You have been invited by " + obj.hostDisplayName + '<button  class="center-block btn btn-primary btn-lg" onclick="meetingPointAttendee.accept()">Accept</button><button  class="center-block btn btn-primary btn-lg" onclick="meetingPointAttendee.deny()">Deny</button>';
-                        document.getElementById("invite_status").style.display = "block";
                     }
 
                 };
@@ -106,7 +94,7 @@
     <div class="container">
 
       <div class="starter-template">
- <h1>Welcome to Rtcc Multi-Party example (Step 1)</h1>
+ <h1>Welcome to Rtcc Multi-Party example for External User(Step 6)</h1>
 
 
     <h4 id="stat"></h4>

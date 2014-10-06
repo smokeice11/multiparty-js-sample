@@ -62,6 +62,18 @@
                     }
                 };
 
+                /* ******************************************************************************** */
+                /*                                                                                  */
+                /*  OnConfCallHandler:                                                              */
+                /*                                                                                  */
+                /*       This function is called on any event related to  meeting points            */
+                /*       Here, this function is called when the Meeting Point has been created      */
+                /*       It return the js object of class MeetingPointHost to interact with.        */
+                /*                                                                                  */
+                /*       Once meeting point created, the Meeting point ID is displayed              */
+                /*       and host button unlocked                                                   */
+                /* ******************************************************************************** */
+
                 rtcc.onConfCallHandler = function(action, obj) {
 
                     if (action === "meetingPointCreated") {
@@ -119,6 +131,16 @@
             init = function () {
                 getToken(UID_USER);
             },
+
+                /* ******************************************************************************** */
+                /*                                                                                  */
+                /*  create (Step 1):                                                                */
+                /*  In the create function, the host creates a meeting point                        */
+                /*  With location, start and stop date                                              */
+                /*  This function is called when the button "Create Meeting Point" is pushed        */
+                /*                                                                                  */
+                /* ******************************************************************************** */
+
             create = function () {
                 var options = {
                     location : "on the cloud",
@@ -127,6 +149,14 @@
                 };
                 meetingPoint = rtcc.createMeetingPoint('scheduled', options);
             },
+                /* ******************************************************************************** */
+                /*                                                                                  */
+                /*  host (Step 1):                                                                  */
+                /*  In the host function, the host hosts the conference identified in the           */
+                /*  meetingPoint object (object created as return of the createMeetingPoint())      */
+                /*  This function is called when the button "Host Meeting Point" is pushed          */
+                /*                                                                                  */
+                /* ******************************************************************************** */
             host = function (){
                 if (meetingPoint){
                     meetingPoint.host();
@@ -134,10 +164,6 @@
                     alert("create meeting point first")
                 }
             }
-            // Test if browser is IE10
-            // Poll for jQuery to come into existence
-
-
 
       init();
     </script>

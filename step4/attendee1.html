@@ -1,9 +1,9 @@
-<!-- This file is used by the caller, used name is attendee1_uid, and it calls the callee named calle_uid -->
+<!-- This file is used by the attendee, used name is attendee1_uid, and it joins a conference call -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Rtcc Application: Attendee (Step Two)</title>
+    <title>My Rtcc Application: Attendee (Step Four)</title>
     <script type="text/javascript" src="http://download.rtccloud.net/js/webappid/YOUR_APP_IDENTIFIER"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -62,11 +62,7 @@
                 };
 
                 rtcc.onConfCallHandler = function(action, obj) {
-                    debugger;
-                    if (action === "meetingPointCreated") {
-                        obj.autoaccept_mode();
-                        document.getElementById("meeting_point_id_display").value = obj.id;
-                    }else if (action === "attendeePending"){
+                    if (action === "attendeePending"){
                         document.getElementById("join_status").style.display = "block";
                         document.getElementById("join_status").innerHTML = "<h4>Status:Waiting For Approval of the Host</h4>"
                     }else if (action === "attendeeAccepted"){
@@ -139,7 +135,7 @@
     <div class="container">
 
       <div class="starter-template">
- <h1>Welcome to Rtcc Multi-Party example (Step 1)</h1>
+ <h1>Welcome to Rtcc Multi-Party example (Step 4)</h1>
 
 
     <h4 id="stat"></h4>

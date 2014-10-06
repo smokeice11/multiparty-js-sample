@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Rtcc Application: Host (Step Two)</title>
+    <title>My Rtcc Application: Host (Step Three)</title>
     <script type="text/javascript" src="http://download.rtccloud.net/js/webappid/YOUR_APP_IDENTIFIER"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -64,15 +64,29 @@
                     }
                 };
 
+
+                /* ********************************************************************************  */
+                /*                                                                                   */
+                /*  OnConfCallHandler: (Step 3)                                                      */
+                /*                                                                                   */
+                /*       This function is called on any event related to  meeting points             */
+                /*       In Step 3, the new code is done in the "joinRequest" case                   */
+                /*                                                                                   */
+                /*       Each time a new user request access after the hosting,                      */
+                /*       his displayName is taken from the attendee list, written on the page,       */
+                /*       and the host can choose to accept or deny the object attendee               */
+                /*                                                                                   */
+                /* ********************************************************************************  */
+
+
                 rtcc.onConfCallHandler = function(action, obj) {
                     if (action === "meetingPointCreated") {
                         document.getElementById("meeting_point_id_display").value = obj.id;
                         document.getElementById("notifications").style.display = "block"
                         document.getElementById('host_meeting_point').style.display = 'block';
                     }else if (action === "joinRequestNotification") {
-                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + "Joined your conference</li>";
+                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + "is waiting for your conference</li>";
                     }  else if (action ==  'joinRequest'){
-                        debugger;
                         invitees[inv_count] = obj;
                         document.getElementById('request_list').innerHTML +=  invitees[inv_count].displayName + "<button class='btn btn-primary' onclick='invitees[" + inv_count + "].accept();'> Allow </button><button class='btn btn-primary' onclick='invitees[" + inv_count + "].deny();'> Deny </button><br/>";
                         inv_count = inv_count + 1;
@@ -137,7 +151,7 @@
             },
             host = function (){
                 if (meetingPoint){
-                    meetingPoint.host();
+                     meetingPoint.host();
                     document.getElementById('request').style.display = "block";
                 }else{
                     alert("create meeting point first")
@@ -155,7 +169,7 @@
     <div class="container">
 
       <div class="starter-template">
- <h1>Welcome to Rtcc Multi-Party example (Step 1)</h1>
+ <h1>Welcome to Rtcc Multi-Party example (Step 3)</h1>
 
 
     <h4 id="stat"></h4>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>My Rtcc Application: Attendee (Step Two)</title>
+    <title>My Rtcc Application: Attendee (Step Three)</title>
     <script type="text/javascript" src="http://download.rtccloud.net/js/webappid/YOUR_APP_IDENTIFIER"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -60,13 +60,20 @@
                         break;
                     }
                 };
+                /* ********************************************************************************  */
+                /*                                                                                   */
+                /*  OnConfCallHandler: (Step 3)                                                      */
+                /*                                                                                   */
+                /*       This function is called on any event related to  meeting points             */
+                /*       In Step 3, the new code is done in the "attendee***" case                   */
+                /*                                                                                   */
+                /*       The status is updated in the web page and if the user is accepted           */
+                /*       he automatically enters the call                                            */
+                /*                                                                                   */
+                /* ********************************************************************************  */
 
                 rtcc.onConfCallHandler = function(action, obj) {
-                    debugger;
-                    if (action === "meetingPointCreated") {
-                        obj.autoaccept_mode();
-                        document.getElementById("meeting_point_id_display").value = obj.id;
-                    }else if (action === "attendeePending"){
+                    if (action === "attendeePending"){
                         document.getElementById("join_status").style.display = "block";
                         document.getElementById("join_status").innerHTML = "<h4>Status:Waiting For Approval of the Host</h4>"
                     }else if (action === "attendeeAccepted"){
@@ -140,7 +147,7 @@
     <div class="container">
 
       <div class="starter-template">
- <h1>Welcome to Rtcc Multi-Party example (Step 1)</h1>
+ <h1>Welcome to Rtcc Multi-Party example (Step 3)</h1>
 
 
     <h4 id="stat"></h4>

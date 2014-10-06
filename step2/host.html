@@ -62,6 +62,18 @@
                     }
                 };
 
+                /* ********************************************************************************  */
+                /*                                                                                   */
+                /*  OnConfCallHandler: (Step 2)                                                      */
+                /*                                                                                   */
+                /*       This function is called on any event related to  meeting points             */
+                /*       In Step 2, the new code just displays the displayName of users requesting   */
+                /*       to enter the conference. this is done in the "joinRequestNotification" case */
+                /*                                                                                   */
+                /*       Each time a new user request access, his displayName is added               */
+                /*                                                                                   */
+                /* ********************************************************************************  */
+
                 rtcc.onConfCallHandler = function(action, obj) {
 
                     if (action === "meetingPointCreated") {
@@ -71,7 +83,7 @@
                         document.getElementById("notifications").style.display = "block"
                         document.getElementById('host_meeting_point').style.display = 'block';
                     }else if (action === "joinRequestNotification") {
-                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + "Joined your conference</li>";
+                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + "is waiting for your conference</li>";
                     }
 
                 };
@@ -149,7 +161,7 @@
     <div class="container">
 
       <div class="starter-template">
- <h1>Welcome to Rtcc Multi-Party example (Step 1)</h1>
+ <h1>Welcome to Rtcc Multi-Party example (Step 2)</h1>
 
 
     <h4 id="stat"></h4>
