@@ -1,7 +1,7 @@
 ### Multi party Step 2
 
 
->Warning: Do not forget to have your configuration (tokens, web hosting, etc.) set up as described [in the main MD fo the repository](../../readme.md). **Do not forget to modify the code to add your applicationId as well as your own URL to get a token.**  
+>Warning: Do not forget to have your configuration (tokens, web hosting, etc.) set up as described [in the main MD fo the repository](https://github.com/sightcall/multiparty-js-sample/blob/master/readme.md). **Do not forget to modify the code to add your applicationId as well as your own URL to get a token.**  
 
 #### Summary
 
