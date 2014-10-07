@@ -54,32 +54,33 @@ Now you can upload the examples on a webserver and start using them.
 We have broken up in six examples described below, for implementation details click on the link after each section
 
 
-step 1:
-See how the Host(host.html) creates a meeting point and then hosts it. Once hosted, an attendee(attende1.html) can join the conference by filling the Meeting Point field with the value shown on the host page and clicking "join".  
+**step 1:**  
+See how the Host(host.html) creates a meeting point and then hosts it.  
+Once hosted, an attendee(attende1.html) can join the conference by filling the Meeting Point field with the value shown on the host page and clicking "join".  
 Please note that the conference is set up in auto-accept mode so that any user having the Meeting Point Id can enter the conference.  
 If you wish to have more than one attendee, just create another page attendee2.html and replace the 
 ```var UID_USER = 'attendee1_uid'``` by a new uid like ```var UID_USER = 'attendee2_uid'```.
 For more clarity you should replace also ```displayName : 'Attendee1',``` by ```displayName : 'Attendee2',```
 
-Step 2:
+**Step 2:**  
 See how the Host is notified before hosting the Meeting Point that some users are waiting his arrival to enter the conference.
 The configuration is the same as step 1 but notification before hosting are handled in the host.html file.  
 
-Step 3:
+**Step 3:**  
 See how to accept or deny users entring the conference and how users are notified of their status.  
 The configuration is the same as step 2 but we have turned off auto-accept; now the host is asked to allow the user that navigates to the attendee1.html page and click join. The attendee page now shows wether their request to attend is pending, accepted or denied.  
 
-Step 4 :
+**Step 4:**  
 See how to change the mode of the Meeting Point.  
-The configuration is the same as step 3 be we have added buttons to allow the host to controll the mode; he can now set it to:
+The configuration is the same as step 3 be we have added buttons to allow the host to controll the mode; The meeting Point can now be set to:
  - "default" -  once the host clicks "host", he will be asked to "accept" or "deny" each attendee
  - "auto-accept" - once the host clicks "host", all attendees are automatically accepted into the conference.
  - "locked" - attendees will automatically recieved a  "denied" answer when trying to "join"  
 
-Step 5:
+**Step 5:**  
 See how to invite someone "on the fly" into a conference. The user does not need to have received the Meeting Point Id.
 The configuration is the same as step 4 but the host can now invite an attendee once the conference has started. The attendee can  "accept" or "deny" the invite.  
 
-Step 6:
+**Step 6:**  
 See how to connect to a conference as an external attendee.
 External.html: new page identical to step3 attendee but connecting as an external user.
