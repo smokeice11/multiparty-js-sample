@@ -70,7 +70,7 @@ The configuration is the same as step 1 but notification before hosting are hand
 See how to accept or deny users entring the conference and how users are notified of their status.  
 The configuration is the same as step 2 but we have turned off auto-accept; now the host is asked to allow the user that navigates to the attendee1.html page and click join. The attendee page now shows wether their request to attend is pending, accepted or denied.  
 
-**[Step 4: Setting up the accept mode](https://github.com/sightcall/multiparty-js-sample/tree/master/step4) **  
+**[Step 4: Setting up the accept mode](https://github.com/sightcall/multiparty-js-sample/tree/master/step4)**  
 See how to change the mode of the Meeting Point.  
 The configuration is the same as step 3 be we have added buttons to allow the host to controll the mode; The meeting Point can now be set to:
  - "default" -  once the host clicks "host", he will be asked to "accept" or "deny" each attendee
