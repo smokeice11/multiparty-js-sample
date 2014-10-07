@@ -62,7 +62,7 @@ If you wish to have more than one attendee, just create another page attendee2.h
 ```var UID_USER = 'attendee1_uid'``` by a new uid like ```var UID_USER = 'attendee2_uid'```.
 For more clarity you should replace also ```displayName : 'Attendee1',``` by ```displayName : 'Attendee2',```
 
-**[Step 2: Adding notification before the conference is opened](https://github.com/sightcall/multiparty-js-sample/tree/master/step2)**  
+**[Step 2: Adding notifications before the conference is opened](https://github.com/sightcall/multiparty-js-sample/tree/master/step2)**  
 See how the Host is notified before hosting the Meeting Point that some users are waiting his arrival to enter the conference.
 The configuration is the same as step 1 but notification before hosting are handled in the host.html file.  
 
