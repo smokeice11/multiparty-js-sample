@@ -71,7 +71,7 @@
                         document.getElementById('host_meeting_point').style.display = 'block';
                         document.getElementById('meeting_point_control').style.display = 'block';
                     }else if (action === "joinRequestNotification") {
-                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + "Joined your conference</li>";
+                        document.getElementById("notifications_list").innerHTML += "<li>"  + obj.displayName + " is waiting for your conference</li>";
                     }  else if (action ==  'joinRequest'){
                         invitees[inv_count] = obj;
                         document.getElementById('request_list').innerHTML +=  invitees[inv_count].displayName + "<button class='btn btn-primary' onclick='invitees[" + inv_count + "].accept();'> Allow </button><button class='btn btn-primary' onclick='invitees[" + inv_count + "].deny();'> Deny </button><br/>";
