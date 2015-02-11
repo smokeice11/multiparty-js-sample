@@ -48,7 +48,6 @@
                         realTimeClient = 'WebRTC';
                         break;
                     case 'sipOk':
-
                         document.getElementById('connection_status').innerHTML = 'Connection Status: Connected as host using ' + realTimeClient;
                         document.getElementById('create_meeting_point').style.display = 'block';
                         break;
@@ -57,6 +56,11 @@
                         getToken(UID_USER, function (token){
                             rtcc.setToken(token);
                             rtcc.authenticate(1);
+                        });
+                        break;
+                    case 'disconnectedRtccDriver':
+                        getToken(UID_USER, function (token){
+                            rtcc.setToken(token);
                         });
                         break;
                     }

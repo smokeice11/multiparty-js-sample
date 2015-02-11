@@ -48,9 +48,8 @@
                         realTimeClient = 'WebRTC';
                         break;
                     case 'sipOk':
-
                         document.getElementById('connection_status').innerHTML = 'Connection Status: Connected as attendee using ' + realTimeClient;
-                         document.getElementById('join_meeting_point').style.display = 'block';
+                        document.getElementById('join_meeting_point').style.display = 'block';
                         break;
                     case 'loggedasotheruser':
                         // force connection, kick other logged users
